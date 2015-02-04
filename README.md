@@ -1,6 +1,8 @@
 Magnetic Resonance (MR-) Connectome
 ====================================
 
+[![Join the chat at https://gitter.im/openconnectome/m2g](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/openconnectome/m2g?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This project contains several tools to play with fiber data in:
 [MRI Studio format](http://www.mristudio.org/).
 
