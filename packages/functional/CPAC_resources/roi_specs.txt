@@ -1,0 +1,3 @@
+/home/eric/Documents/resources/ROIs/HarvardOxford-cort-maxprob-thr50-2mm.nii.gz
+/home/eric/Documents/resources/ROIs/HarvardOxford-sub-maxprob-thr50-2mm.nii.gz
+/home/eric/Documents/resources/ROIs/rois_2mm.nii.gz

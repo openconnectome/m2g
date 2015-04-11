@@ -1,0 +1,1 @@
+/home/eric/Documents/resources/spatial_maps/PNAS_Smith_rsn_ten.nii.gz
