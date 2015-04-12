@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <moduleGroup id="Untitled_1" name="Untitled" posX="0" posY="0" sourceCode="">
+                <module id="Func_Preproc_1" name="Func_Preproc" package="CPAC" version="0.3.8" posX="48" posY="108" sourceCode="" location="pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/driver_func_preproc.py">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Jan 16 14:44:48 EST 2015" />
+                        </metadata>
+                        <input id="Func_Preproc_1.InputSpecFunctionalFile" name="Input Spec: Functional File" required="true" enabled="true" order="0" prefix="-f" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                                <filetype name="nifti" extension="nii" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/benchmark_package_INPUTS-ONLY/input_data/site_1/1019436/session_1/rest_1/rest.nii.gz</value>
+                                </values>
+                        </input>
+                        <input id="Func_Preproc_1.ScanParamsTR" name="Scan Params: TR" required="false" enabled="true" order="3" prefix="-tr" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                                <values>
+                                        <value>2.5</value>
+                                </values>
+                        </input>
+                        <input id="Func_Preproc_1.ScanParamsAcquisition" name="Scan Params: Acquisition" description="Acquisition Pattern" required="false" enabled="true" order="4" prefix="-a" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                                <values>
+                                        <value>seq+z</value>
+                                </values>
+                        </input>
+                        <input id="Func_Preproc_1.InputSpecFirstSlice" name="Input Spec: First Slice" required="false" enabled="false" order="1" prefix="-fs" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                                <values>
+                                        <value>4</value>
+                                </values>
+                        </input>
+                        <input id="Func_Preproc_1.InputSpecLastSlice" name="Input Spec: Last Slice" required="false" enabled="false" order="2" prefix="-ls" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                                <values>
+                                        <value>299</value>
+                                </values>
+                        </input>
+                        <input id="Func_Preproc_1.Usebet" name="Use bet" description="1 for true, 0 for false. 0 will use 3dautomask (afni) instead of bet (fsl)" required="false" enabled="true" order="5" prefix="-bet" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                                <values>
+                                        <value>0</value>
+                                </values>
+                        </input>
+                        <output id="Func_Preproc_1.Locationerodeonevoxel" name="Location: erode one voxel" required="false" enabled="true" order="7" prefix="-eov" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/erode.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationdeoblique" name="Location: deoblique" required="false" enabled="true" order="8" prefix="-d" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/deoblique.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationedgedetect" name="Location: edge detect" required="false" enabled="true" order="9" prefix="-ed" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/edge_detect.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationgetbrainmask" name="Location: get brain mask" required="false" enabled="true" order="10" prefix="-gbm" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/brain_mask.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationgetmeanmotion" name="Location: get mean motion" required="false" enabled="true" order="11" prefix="-gmm" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/mean_mot.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationgetmeanrpi" name="Location: get mean rpi" required="false" enabled="true" order="14" prefix="-gmr" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/rpi.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationmasknormalize" name="Location: mask normalize" required="false" enabled="true" order="12" prefix="-mn" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/mask_norm.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationmeanskullstrip" name="Location: mean skullstrip" required="false" enabled="true" order="13" prefix="-ms" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/skullstrip.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationmotioncorrect" name="Location: motion correct" required="false" enabled="true" order="15" prefix="-mc" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/motcor.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.LocationmotioncorrectA" name="Location: motion correct A" required="false" enabled="true" order="16" prefix="-mca" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/motion_correct_a.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationnormalize" name="Location: normalize" required="false" enabled="true" order="17" prefix="-n" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/normalize.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationreorient" name="Location: reorient" required="false" enabled="true" order="18" prefix="-r" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/reorient.nii.gz</value>
+                                </values>
+                        </output>
+                        <input id="Func_Preproc_1.basedirectory" name="base directory" required="true" enabled="true" order="6" prefix="-b" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                                <values>
+                                        <value>/cis/home/ebridge2/func_preproc_test/</value>
+                                </values>
+                        </input>
+                </module>
+        </moduleGroup>
+</pipeline>
+
