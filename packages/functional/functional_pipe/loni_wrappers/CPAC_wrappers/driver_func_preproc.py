@@ -1,4 +1,10 @@
-#!/cis/project/migraine/centos6/anaconda/bin/python
+#!/usr/bin/env python
+
+# a function for performing functional preprocessing, designed for
+# use with the LONI pipeline editor. 
+
+#Copyright <c> 2015, written on 01/25/2015 by Eric Bridgeford
+
 #LONI usable functional preprocessing module
 #uses CPAC func_preproc function
 #version 0.3.8

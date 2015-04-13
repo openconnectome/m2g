@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pipeline version=".2">
         <connections>
+                <connection source="Func_Preproc_1.Locationnormalize" sink="ExVol_1.baseimage" />
+                <connection source="Func_Preproc_1.Locationnormalize" sink="AppReggie_1.OriginalImage" />
                 <connection source="RigidReggie_1.transformation" sink="AppReggie_1.Transformmatrix" />
                 <connection source="ExVol_1.outputlocation" sink="RigidReggie_1.MovingImage" />
+                <connection source="AppReggie_1.WarpedImage" sink="Voxel_TSE_1.fMRIimage" />
         </connections>
-        <moduleGroup id="Untitled_1" name="Untitled" posX="0" posY="0" sourceCode="">
-                <module id="ExVol_1" name="Ex Vol" posX="286" posY="191" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/extract_vol.py">
-                        <tag />
+        <moduleGroup id="func2corr_1" name="func2corr" posX="0" posY="0" sourceCode="">
+                <module id="ExVol_1" name="Ex Vol" posX="327" posY="114" rotation="1" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/extract_vol.py">
                         <metadata>
                                 <data key="__creationDateKey" value="Sat Apr 11 19:57:53 EDT 2015" />
                         </metadata>
                         <input id="ExVol_1.baseimage" name="base image" description="the base image to extract a slice from" required="false" enabled="true" order="0">
                                 <format type="File" cardinality="1">
                                         <fileTypes>
-                                                <filetype name="File" extension="" description="Any type of data file" />
                                                 <filetype name="niftii2" extension="nii.gz" description="" />
                                                 <filetype name="nifti" extension="nii" description="" />
                                         </fileTypes>
                                 </format>
-                                <values>
-                                        <value>pipeline://localhost//home/eric/Documents/CPAC_outputs/CPAC_test4/CPAC_test1_working_fsl/resting_preproc_1_1867675957/func_preproc_automask_0/_scan_rest_1_rest/func_normalize/KKI2009-01-fMRI_calc_tshift_resample_volreg_calc_maths.nii.gz</value>
-                                </values>
                         </input>
                         <input id="ExVol_1.volumeslice" name="volume slice" description="the number of the slice to extract" required="false" enabled="true" order="1">
                                 <format type="Number" cardinality="1" />
@@ -31,15 +29,13 @@
                         <output id="ExVol_1.outputlocation" name="output location" description="the output location of the extracted slice" required="false" enabled="true" order="2">
                                 <format type="File" cardinality="1">
                                         <fileTypes>
-                                                <filetype name="File" extension="" description="Any type of data file" />
                                                 <filetype name="nifti" extension="nii" description="" />
                                                 <filetype name="niftii2" extension="nii.gz" description="" />
                                         </fileTypes>
                                 </format>
                         </output>
                 </module>
-                <module id="AppReggie_1" name="App Reggie" package="m2g" posX="266" posY="513" sourceCode="" location="pipeline://localhost//mrimages/src/m2g/packages/registration/apply_registration.py">
-                        <tag />
+                <module id="AppReggie_1" name="App Reggie" package="m2g" posX="169" posY="516" sourceCode="" location="pipeline://localhost//mrimages/src/m2g/packages/registration/apply_registration.py">
                         <metadata>
                                 <data key="__creationDateKey" value="Thu Feb 26 13:46:28 EST 2015" />
                         </metadata>
@@ -50,9 +46,6 @@
                                                 <filetype name="nifti" extension="nii" description="" />
                                         </fileTypes>
                                 </format>
-                                <values>
-                                        <value>pipeline://localhost//home/eric/Documents/CPAC_outputs/CPAC_test4/CPAC_test1_working_fsl/resting_preproc_1_1867675957/func_preproc_automask_0/_scan_rest_1_rest/func_normalize/KKI2009-01-fMRI_calc_tshift_resample_volreg_calc_maths.nii.gz</value>
-                                </values>
                         </input>
                         <output id="AppReggie_1.WarpedImage" name="Warped Image" required="false" enabled="true" order="1">
                                 <format type="File" cardinality="1">
@@ -61,9 +54,6 @@
                                                 <filetype name="nifti" extension="nii" description="" />
                                         </fileTypes>
                                 </format>
-                                <values>
-                                        <value>pipeline://localhost//home/eric/Documents/testing_pipes/pipe_test_mid_leg/KKI_MNIT1v3.nii.gz</value>
-                                </values>
                         </output>
                         <input id="AppReggie_1.ReferenceImage" name="Reference Image" description="Image that the transform was computed wrt." required="false" enabled="true" order="2">
                                 <format type="File" cardinality="1">
@@ -85,7 +75,6 @@
                         </input>
                 </module>
                 <module id="RigidReggie_1" name="Rigid Reggie" package="m2g" posX="437" posY="342" sourceCode="" location="pipeline://localhost//mrimages/src/m2g/packages/registration/register_rigid.py">
-                        <tag />
                         <metadata>
                                 <data key="__creationDateKey" value="Thu Feb 26 09:45:13 EST 2015" />
                         </metadata>
@@ -128,6 +117,206 @@
                                                 <filetype name="Matlab file" extension="mat" description="" />
                                         </fileTypes>
                                 </format>
+                        </output>
+                </module>
+                <module id="Func_Preproc_1" name="Func_Preproc" package="CPAC" version="0.3.8" posX="128" posY="25" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/functional_pipe/loni_wrappers/CPAC_wrappers/driver_func_preproc.py">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Jan 16 14:44:48 EST 2015" />
+                        </metadata>
+                        <input id="Func_Preproc_1.InputSpecFunctionalFile" name="Input Spec: Functional File" description="the fMRI raw image to be preprocessed" required="true" enabled="true" order="0" prefix="-f" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                                <filetype name="nifti" extension="nii" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-01/KKI2009-01-fMRI.nii</value>
+                                </values>
+                        </input>
+                        <input id="Func_Preproc_1.ScanParamsTR" name="Scan Params: TR" required="false" enabled="true" order="3" prefix="-tr" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                                <values>
+                                        <value>2.5</value>
+                                </values>
+                        </input>
+                        <input id="Func_Preproc_1.ScanParamsAcquisition" name="Scan Params: Acquisition" description="Acquisition Pattern" required="false" enabled="true" order="4" prefix="-a" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                                <values>
+                                        <value>seq+z</value>
+                                </values>
+                        </input>
+                        <input id="Func_Preproc_1.InputSpecFirstSlice" name="Input Spec: First Slice" required="false" enabled="false" order="1" prefix="-fs" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                                <values>
+                                        <value>4</value>
+                                </values>
+                        </input>
+                        <input id="Func_Preproc_1.InputSpecLastSlice" name="Input Spec: Last Slice" required="false" enabled="false" order="2" prefix="-ls" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                                <values>
+                                        <value>299</value>
+                                </values>
+                        </input>
+                        <input id="Func_Preproc_1.Usebet" name="Use bet" description="1 for true, 0 for false. 0 will use 3dautomask (afni) instead of bet (fsl)" required="false" enabled="true" order="5" prefix="-bet" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1" />
+                                <values>
+                                        <value>0</value>
+                                </values>
+                        </input>
+                        <output id="Func_Preproc_1.Locationerodeonevoxel" name="Location: erode one voxel" required="false" enabled="false" order="7" prefix="-eov" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/erode.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationdeoblique" name="Location: deoblique" required="false" enabled="false" order="8" prefix="-d" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/deoblique.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationedgedetect" name="Location: edge detect" required="false" enabled="false" order="9" prefix="-ed" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/edge_detect.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationgetbrainmask" name="Location: get brain mask" required="false" enabled="false" order="10" prefix="-gbm" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Func_Preproc_1.Locationgetmeanmotion" name="Location: get mean motion" required="false" enabled="false" order="11" prefix="-gmm" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/mean_mot.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationgetmeanrpi" name="Location: get mean rpi" required="false" enabled="false" order="14" prefix="-gmr" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/rpi.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationmasknormalize" name="Location: mask normalize" required="false" enabled="false" order="12" prefix="-mn" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/mask_norm.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationmeanskullstrip" name="Location: mean skullstrip" required="false" enabled="false" order="13" prefix="-ms" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/skullstrip.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationmotioncorrect" name="Location: motion correct" required="false" enabled="false" order="15" prefix="-mc" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/motcor.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.LocationmotioncorrectA" name="Location: motion correct A" required="false" enabled="false" order="16" prefix="-mca" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/motion_correct_a.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.Locationnormalize" name="Location: normalize" required="false" enabled="true" order="17" prefix="-n" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Func_Preproc_1.Locationreorient" name="Location: reorient" required="false" enabled="false" order="18" prefix="-r" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//cis/home/ebridge2/my_documents/cpac_functions/func_preproc/func_preproc_6/reorient.nii.gz</value>
+                                </values>
+                        </output>
+                        <output id="Func_Preproc_1.basedirectory" name="base directory" required="true" enabled="true" order="6" prefix="-b" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Directory" cardinality="1" />
+                        </output>
+                </module>
+                <module id="Voxel_TSE_1" name="Voxel_TSE" package="CPAC" version="0.3.8" posX="347" posY="672" rotation="1" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/functional_pipe/loni_wrappers/CPAC_wrappers/driver_voxel_tse.py">
+                        <metadata>
+                                <data key="__creationDateKey" value="Sat Apr 11 23:45:52 EDT 2015" />
+                        </metadata>
+                        <input id="Voxel_TSE_1.fMRIimage" name="fMRI image" description="the image we will acquire timeseries information from" required="false" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                                <filetype name="nifti" extension="nii" description="" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="Voxel_TSE_1.mask" name="mask" description="the mask for which timeseries will be extracted" required="false" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="nifti2" extension="nii.gz" description="" />
+                                                <filetype name="nifti" extension="nii" description="" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//mnt/ssd1/atlas/MNI152_T1_1mm_brain_mask.nii</value>
+                                </values>
+                        </input>
+                        <output id="Voxel_TSE_1.base_directory" name="base_directory" required="false" enabled="true" order="2">
+                                <format type="Directory" cardinality="1" />
+                        </output>
+                        <output id="Voxel_TSE_1.timeseriesfile" name="timeseries file" description="the location of the numpy file generated by the program" required="false" enabled="true" order="3">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost//home/eric/Documents/testing_pipes/tse2.npz</value>
+                                </values>
                         </output>
                 </module>
         </moduleGroup>
