@@ -21,7 +21,6 @@
 # edited by Eric Bridgeford on 2015-04-08.
 # Email: gkiar@jhu.edu
 # Copyright (c) 2015. All rights reserved.
-
 from argparse import ArgumentParser
 from nibabel import load, save, Nifti1Image
 from numpy import where, loadtxt
