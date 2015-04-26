@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # a revised module for computing a correlation
 # matrix given an input set of roi voxelwise timeseries
 

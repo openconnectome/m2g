@@ -29,7 +29,7 @@ from numpy import floor
 
 def make_list(datadir, template, outlist):
   
-  inf = open(str(template), 'r')
+  inf = open(template, 'r')
   content = inf.readlines()
   inf.close()
 
@@ -60,7 +60,7 @@ def main():
   parser = ArgumentParser(description="")
   parser.add_argument("data_dir", action="store", help="base data directory (contains directories for all subjects")
   parser.add_argument("outlist", action="store", help="output list file")
-  parser.add_argument("-t","--template", help="template for cpac format")
+  parser.add_argument("-t","--template", nargs="+", help="template for cpac format")
 
   result = parser.parse_args()
   if result.template:
