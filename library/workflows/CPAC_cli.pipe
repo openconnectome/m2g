@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="Sub_List_Extract_1.subjectlistinCPACformat" sink="CPAC_CLI_1.CPACSubjectList" />
+                <connection source="Config_Gen_1.CPACconfig" sink="CPAC_CLI_1.CPACConfigFile" />
+                <connection source="CPACCLI_1.Newparameter1" sink="CorrAnalysis_1.BaseDirectoryoftheCPACruns" />
+                <connection source="CPACCLI_1.Newparameter1_2" sink="CorrAnalysis_1.waitforCPACtofinish" />
+                <connection source="TSEExtraction_1.TSElocations" sink="Path_Gen_Corr_1.textfileofnpzpaths" />
+                <connection source="Path_Gen_Corr_1.textfileofcorrpaths" sink="Viz_Corr_1.PathtoCorrMatrices" />
+                <connection source="Viz_Folder_Gen_1.Vizlocations" sink="Viz_Corr_1.PathtoVizLocations" />
+                <connection source="Corr_Gen_1.Newparameter1" sink="Viz_Corr_1.Newparameter1" />
+                <connection source="TSEExtraction_1.TSElocations" sink="Corr_Gen_1.pathstothenpztimeseriesfiles" />
+                <connection source="Path_Gen_Corr_1.textfileofcorrpaths" sink="Corr_Gen_1.pathtothenpytimeseriesfiles" />
+                <connection source="Path_Gen_Corr_1.textfileofcorrpaths" sink="Viz_Folder_Gen_1.LocationsofCorrfiles" />
+        </connections>
+        <moduleGroup id="cli_1" name="cli" posX="0" posY="0" sourceCode="">
+                <moduleGroup id="CPACCLI_1" name="CPAC CLI" posX="333" posY="122" sourceCode="">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Sat Apr 25 18:19:16 EDT 2015" />
+                        </metadata>
+                        <input link="Config_Gen_1.CPACOutputDirectory" id="CPACCLI_1.CPACOutputDirectory" name="CPAC Output Directory" order="0" />
+                        <input description="a directory containing subjects in the following format:&#xA;/subjname/scans.nii (or .nii.gz)" link="Sub_List_Extract_1.subjectlistdirectory" id="CPACCLI_1.subjectlistdirectory" name="subject list directory" order="1" />
+                        <output link="Config_Gen_1.OutputDirectory" id="CPACCLI_1.Newparameter1" name="New parameter 1" order="3" />
+                        <output link="CPAC_CLI_1.Newparameter1" id="CPACCLI_1.Newparameter1_2" name="New parameter 1" order="3" />
+                        <input link="Config_Gen_1.template" id="CPACCLI_1.template" name="template" order="4" />
+                        <input link="Sub_List_Extract_1.template" id="CPACCLI_1.template_2" name="template" order="5" />
+                        <module id="Config_Gen_1" name="Config_Gen" package="OCP" version="0.1.0" posX="399" posY="24" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/CPAC_pipes/cpac_config_gen.py">
+                                <tag />
+                                <metadata>
+                                        <data key="__creationDateKey" value="Sat Apr 25 18:04:32 EDT 2015" />
+                                </metadata>
+                                <input id="Config_Gen_1.CPACOutputDirectory" name="CPAC Output Directory" required="true" enabled="true" order="0">
+                                        <format type="Directory" cardinality="1" />
+                                        <dependencies>
+                                                <dependent>Output Directory</dependent>
+                                        </dependencies>
+                                        <values>
+                                                <value>pipeline://localhost//home/eric/Documents/CPAC_outputs/CPAC_test1</value>
+                                        </values>
+                                </input>
+                                <output id="Config_Gen_1.CPACconfig" name="CPAC config" required="true" enabled="true" order="1">
+                                        <format type="File" cardinality="1">
+                                                <fileTypes>
+                                                        <filetype name="YML" extension="yml" description="" />
+                                                </fileTypes>
+                                        </format>
+                                </output>
+                                <output id="Config_Gen_1.OutputDirectory" name="Output Directory" required="true" enabled="true" order="3" includeTransformedParameter="false">
+                                        <format type="Directory" cardinality="1" transformationBase="CPAC Output Directory">
+                                                <transform order="1" operation="Append">/outputs/</transform>
+                                        </format>
+                                        <dependencies>
+                                                <dependsOn>CPAC Output Directory</dependsOn>
+                                        </dependencies>
+                                </output>
+                                <input id="Config_Gen_1.template" name="template" required="true" enabled="true" order="2" prefix="-t" prefixSpaced="true" prefixAllArgs="false">
+                                        <format type="File" cardinality="1">
+                                                <fileTypes>
+                                                        <filetype name="File" extension="" description="Any type of data file" />
+                                                </fileTypes>
+                                        </format>
+                                        <values>
+                                                <value>pipeline://localhost//home/eric/Documents/m2g/packages/functional/CPAC_pipes/template_cpac_config.yml</value>
+                                        </values>
+                                </input>
+                        </module>
+                        <module id="Sub_List_Extract_1" name="Sub_List_Extract" package="OCP" version="0.1.0" posX="0" posY="20" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/CPAC_sub_lists/cpac_list_gen.py">
+                                <tag />
+                                <metadata>
+                                        <data key="__creationDateKey" value="Sat Apr 25 18:00:50 EDT 2015" />
+                                </metadata>
+                                <input id="Sub_List_Extract_1.subjectlistdirectory" name="subject list directory" description="a directory containing subjects in the following format:&#xA;/subjname/scans.nii (or .nii.gz)" required="true" enabled="true" order="0">
+                                        <format type="Directory" cardinality="1" />
+                                        <values>
+                                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/</value>
+                                        </values>
+                                </input>
+                                <output id="Sub_List_Extract_1.subjectlistinCPACformat" name="subject list in CPAC format" required="true" enabled="true" order="1">
+                                        <format type="File" cardinality="1">
+                                                <fileTypes>
+                                                        <filetype name="YML" extension="yml" description="" />
+                                                </fileTypes>
+                                        </format>
+                                </output>
+                                <input id="Sub_List_Extract_1.template" name="template" required="true" enabled="true" order="2" prefix="-t" prefixSpaced="true" prefixAllArgs="false">
+                                        <format type="File" cardinality="1">
+                                                <fileTypes>
+                                                        <filetype name="YML" extension="yml" description="" />
+                                                </fileTypes>
+                                        </format>
+                                        <values>
+                                                <value>pipeline://localhost//home/eric/Documents/m2g/packages/functional/CPAC_sub_lists/template_cpac_sublists.yml</value>
+                                        </values>
+                                </input>
+                        </module>
+                        <module id="CPAC_CLI_1" name="CPAC_CLI" package="CPAC" version="0.3.8" posX="219" posY="220" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/functional_pipe/loni_wrappers/CPAC_wrappers/CPAC_cli.py">
+                                <tag />
+                                <metadata>
+                                        <data key="__creationDateKey" value="Sat Apr 25 18:06:15 EDT 2015" />
+                                </metadata>
+                                <input id="CPAC_CLI_1.CPACSubjectList" name="CPAC Subject List" required="true" enabled="true" order="0" prefix="-s" prefixSpaced="true" prefixAllArgs="false">
+                                        <format type="File" cardinality="1">
+                                                <fileTypes>
+                                                        <filetype name="YML" extension="yml" description="" />
+                                                </fileTypes>
+                                        </format>
+                                </input>
+                                <input id="CPAC_CLI_1.CPACConfigFile" name="CPAC Config File" required="true" enabled="true" order="1" prefix="-c" prefixSpaced="true" prefixAllArgs="false">
+                                        <format type="File" cardinality="1">
+                                                <fileTypes>
+                                                        <filetype name="YML" extension="yml" description="" />
+                                                </fileTypes>
+                                        </format>
+                                </input>
+                                <input id="CPAC_CLI_1.pipelinename" name="pipeline name" required="true" enabled="true" order="2" prefix="-n" prefixSpaced="true" prefixAllArgs="false">
+                                        <format type="String" cardinality="1" />
+                                        <values>
+                                                <value>fsl</value>
+                                        </values>
+                                </input>
+                                <output id="CPAC_CLI_1.Newparameter1" name="New parameter 1" required="true" enabled="true" order="3">
+                                        <format type="Flow Control" cardinality="1" />
+                                </output>
+                        </module>
+                </moduleGroup>
+                <moduleGroup id="CorrAnalysis_1" name="Corr Analysis" package="OCP" version="0.1.0" posX="344" posY="346" sourceCode="">
+                        <tag />
+                        <metadata>
+                                <data key="__creationDateKey" value="Sat Apr 25 19:38:58 EDT 2015" />
+                        </metadata>
+                        <input link="TSEExtraction_1.BaseDirectoryoftheCPACruns" id="CorrAnalysis_1.BaseDirectoryoftheCPACruns" name="Base Directory of the CPAC runs" order="0" />
+                        <input description="The directory to place all viz outputs (png files) " link="Viz_Folder_Gen_1.OutputDirectory" id="CorrAnalysis_1.OutputDirectory" name="Output Directory" order="1" />
+                        <input link="TSEExtraction_1.waitforCPACtofinish" id="CorrAnalysis_1.waitforCPACtofinish" name="wait for CPAC to finish" order="2" />
+                        <module id="Path_Gen_Corr_1" name="Path_Gen_Corr" package="OCP" version="0.1.0" posX="417" posY="165" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/functional_pipe/loni_wrappers/OCP_wrappers/path_gen_corr_files.sh">
+                                <tag />
+                                <metadata>
+                                        <data key="__creationDateKey" value="Sat Apr 25 19:16:12 EDT 2015" />
+                                </metadata>
+                                <input id="Path_Gen_Corr_1.textfileofnpzpaths" name="text file of npz paths" description="text file containing the paths to the npz files, each on a separate line" required="true" enabled="true" order="0">
+                                        <format type="File" cardinality="1">
+                                                <fileTypes>
+                                                        <filetype name="text" extension="txt" description="" />
+                                                </fileTypes>
+                                        </format>
+                                </input>
+                                <output id="Path_Gen_Corr_1.textfileofcorrpaths" name="text file of corr paths" description="text file containing paths to the correlations matrices that will be generated" required="false" enabled="true" order="1">
+                                        <format type="File" cardinality="1">
+                                                <fileTypes>
+                                                        <filetype name="text" extension="txt" description="" />
+                                                </fileTypes>
+                                        </format>
+                                </output>
+                        </module>
+                        <module id="TSEExtraction_1" name="TSE Extraction" package="OCP" version="0.1.0" posX="0" posY="20" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/functional_pipe/loni_wrappers/OCP_wrappers/tse_path_extract.sh">
+                                <tag />
+                                <metadata>
+                                        <data key="__creationDateKey" value="Sat Apr 25 18:21:01 EDT 2015" />
+                                </metadata>
+                                <input id="TSEExtraction_1.BaseDirectoryoftheCPACruns" name="Base Directory of the CPAC runs" required="true" enabled="true" order="0">
+                                        <format type="Directory" cardinality="1" />
+                                </input>
+                                <input id="TSEExtraction_1.stringtomatch" name="string to match" description="the type of timeseries analysis that will take place; should be &quot;roi_timeseries&quot; unless otherwise desired" required="true" enabled="true" order="1">
+                                        <format type="String" cardinality="1" />
+                                        <values>
+                                                <value>roi_timeseries</value>
+                                        </values>
+                                </input>
+                                <output id="TSEExtraction_1.TSElocations" name="TSE locations" required="true" enabled="true" order="2">
+                                        <format type="File" cardinality="1">
+                                                <fileTypes>
+                                                        <filetype name="text" extension="txt" description="" />
+                                                </fileTypes>
+                                        </format>
+                                </output>
+                                <input id="TSEExtraction_1.waitforCPACtofinish" name="wait for CPAC to finish" required="true" enabled="true" order="3">
+                                        <format type="Flow Control" cardinality="1" />
+                                </input>
+                        </module>
+                        <module id="Viz_Corr_1" name="Viz_Corr" package="OCP" version="0.1.0" posX="550" posY="535" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/functional_pipe/loni_wrappers/OCP_wrappers/vizcorr.py">
+                                <tag />
+                                <metadata>
+                                        <data key="__creationDateKey" value="Sat Apr 25 19:19:12 EDT 2015" />
+                                </metadata>
+                                <input id="Viz_Corr_1.PathtoCorrMatrices" name="Path to Corr Matrices" description="Text file with the paths to the corr matrices" required="true" enabled="true" order="0">
+                                        <format type="File" cardinality="1">
+                                                <fileTypes>
+                                                        <filetype name="text" extension="txt" description="" />
+                                                </fileTypes>
+                                        </format>
+                                </input>
+                                <input id="Viz_Corr_1.PathtoVizLocations" name="Path to Viz Locations" required="true" enabled="true" order="1">
+                                        <format type="File" cardinality="1">
+                                                <fileTypes>
+                                                        <filetype name="text" extension="txt" description="" />
+                                                </fileTypes>
+                                        </format>
+                                </input>
+                                <input id="Viz_Corr_1.Newparameter1" name="New parameter 1" required="true" enabled="true" order="2">
+                                        <format type="Flow Control" cardinality="1" />
+                                </input>
+                        </module>
+                        <module id="Corr_Gen_1" name="Corr_Gen" package="OCP" version="0.1.0" posX="49" posY="332" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/functional_pipe/loni_wrappers/OCP_wrappers/driver_roitse2corr.py">
+                                <tag />
+                                <metadata>
+                                        <data key="__creationDateKey" value="Sat Apr 25 19:04:21 EDT 2015" />
+                                </metadata>
+                                <input id="Corr_Gen_1.pathstothenpztimeseriesfiles" name="paths to the npz timeseries files" description="text file containing all the paths to the numpy archives with the tse information; each path is on a newline" required="true" enabled="true" order="0">
+                                        <format type="File" cardinality="1">
+                                                <fileTypes>
+                                                        <filetype name="text" extension="txt" description="" />
+                                                </fileTypes>
+                                        </format>
+                                </input>
+                                <output id="Corr_Gen_1.Newparameter1" name="New parameter 1" required="false" enabled="true" order="2">
+                                        <format type="Flow Control" cardinality="1" />
+                                </output>
+                                <input id="Corr_Gen_1.pathtothenpytimeseriesfiles" name="path to the npy timeseries files" description="paths to the npy arrays of the corr matrices; each line contains one path to an output to be generated; should be of equal length to above by definition..." required="true" enabled="true" order="1">
+                                        <format type="File" cardinality="1">
+                                                <fileTypes>
+                                                        <filetype name="File" extension="" description="Any type of data file" />
+                                                </fileTypes>
+                                        </format>
+                                </input>
+                        </module>
+                        <module id="Viz_Folder_Gen_1" name="Viz_Folder_Gen" package="OCP" version="0.1.0" posX="645" posY="328" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/functional_pipe/loni_wrappers/OCP_wrappers/png_path_gen.sh">
+                                <tag />
+                                <metadata>
+                                        <data key="__creationDateKey" value="Sat Apr 25 19:35:54 EDT 2015" />
+                                </metadata>
+                                <input id="Viz_Folder_Gen_1.OutputDirectory" name="Output Directory" description="The directory to place all viz outputs (png files) " required="true" enabled="true" order="1">
+                                        <format type="Directory" cardinality="1" />
+                                        <values>
+                                                <value>pipeline://localhost//home/eric/Documents/CPAC_outputs/CPACvizout/</value>
+                                        </values>
+                                </input>
+                                <output id="Viz_Folder_Gen_1.Vizlocations" name="Viz locations" description="text file where each line represents a location of a png file" required="true" enabled="true" order="2">
+                                        <format type="File" cardinality="1">
+                                                <fileTypes>
+                                                        <filetype name="text" extension="txt" description="" />
+                                                </fileTypes>
+                                        </format>
+                                </output>
+                                <input id="Viz_Folder_Gen_1.LocationsofCorrfiles" name="Locations of Corr files" required="true" enabled="true" order="0">
+                                        <format type="File" cardinality="1">
+                                                <fileTypes>
+                                                        <filetype name="File" extension="" description="Any type of data file" />
+                                                </fileTypes>
+                                        </format>
+                                </input>
+                        </module>
+                </moduleGroup>
+        </moduleGroup>
+</pipeline>
+
