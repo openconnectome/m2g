@@ -42,10 +42,10 @@ def get_corr_matrix(infile, outfile):
 			Me[i] = mean(data[i, :])
 		for x in range(0, data.shape[0]):
 			for y in range(0, data.shape[0]):
-				sum = 0
+				sumval = 0
 				for i in range(0, data.shape[1]):
-					sum += (data[x, i] - Me[x])*(data[y, i] - Me[y])
-				Corr[x,y] = sum/((data.shape[1]-1)*(Std[x]*Std[y]))
+					sumval += (data[x, i] - Me[x])*(data[y, i] - Me[y])
+				Corr[x,y] = sumval/((data.shape[1]-1)*(Std[x]*Std[y]))
 		save(lineout, Corr)
 	
 def main():
