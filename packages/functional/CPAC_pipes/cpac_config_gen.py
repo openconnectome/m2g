@@ -8,7 +8,7 @@ from re import compile, sub
 from random import random
 from numpy import floor
 
-def make_list(outpath, template, config):
+def make_list(outpath, working, template, config):
   
   inf = open(str(template), 'r')
   content = inf.readlines()
@@ -19,7 +19,7 @@ def make_list(outpath, template, config):
   
   out_data = list()
 
-  temp_sub[45] = temp_sub[45].replace('path',outpath + '/working')
+  temp_sub[45] = p.sub(working + '/CPACworking', temp_sub[45])
   print(outpath + '/outputs')
   temp_sub[49] = p.sub(outpath + '/crash', temp_sub[49])
   temp_sub[53] = p.sub(outpath + '/outputs', temp_sub[53])
@@ -35,12 +35,13 @@ def make_list(outpath, template, config):
 def main():
   parser = ArgumentParser(description="")
   parser.add_argument("path", help="base directory in which cpac outputs will be placed")
+  parser.add_argument("working",help="the working directory to place CPAC intermediates.")
   parser.add_argument("config", help="output config file")
   parser.add_argument("-t","--template", help="template for cpac config")
 
   result = parser.parse_args()
   if result.template:
-    make_list(result.path, result.template, result.config)
+    make_list(result.path, result.working, result.template, result.config)
   else:
     make_list(result.path, 'template_cpac_config.yml', result.config)
 

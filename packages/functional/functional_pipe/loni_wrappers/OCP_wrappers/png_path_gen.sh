@@ -14,12 +14,5 @@
 #written by Eric Bridgeford on 2015-04-25
 #
 
+sed -e s/.npy/.png/g $1 > $2
 
-COUNTER=0
-for file in $(cat $1);
-do 
-	a='roi_viz'
-	b='.png'
-	echo $2/$a$COUNTER$b >> $3; 
-	let COUNTER=COUNTER+1
-done
