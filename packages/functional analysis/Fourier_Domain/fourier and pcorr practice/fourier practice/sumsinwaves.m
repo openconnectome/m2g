@@ -1,8 +1,8 @@
 Fs = 1000; %frequency sample
 T = 1/Fs;
-L = 1000;
+L = 10000;
 t = (0:L) * T;
-x = .7*sin(2*pi*60*t) + .8*sin(2*pi*40*t);
+x = .7*sin(2*pi*60*t) + .5*sin(2*pi*40*t);
 subplot(2,2,1)
 plot(Fs*t(1:60), x(1:60));
 title('x = .7*sin(2*pi*60*t) + .5*sin(2*pi*40*t)')
@@ -14,7 +14,7 @@ f = Fs/2 * linspace(0, 1, NFFT/2 + 1); % range of possible freq
 subplot(2,2,2)
 plot(f(1:NFFT/2 + 1), 2*abs(X(1:NFFT/2+1)));
 title('2*|X(w)|');
-xlabel('frequencies');
+xlabel('single sided frequencies');
 axis([0 100 0 1]);
 
 n = 2*randn(size(t));
