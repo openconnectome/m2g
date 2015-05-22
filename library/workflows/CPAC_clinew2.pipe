@@ -152,7 +152,7 @@
                                         <input id="Config_Gen_1.WorkingDirectoryPath" name="Working Directory Path" required="true" enabled="true" order="1">
                                                 <format type="String" cardinality="1" />
                                                 <values>
-                                                        <value>/tmp/eric</value>
+                                                        <value>/mnt/ssd1/data/outputs/CPAC/CPACtest3</value>
                                                 </values>
                                         </input>
                                 </module>
@@ -272,7 +272,6 @@
                         </moduleGroup>
                 </moduleGroup>
                 <dataModule id="fMRI_1" name="fMRI" package="OCP" posX="111" posY="29" sourceCode="" type="File" source="true" loopIndex="false" serverAddress="localhost">
-                        <tag />
                         <metadata>
                                 <data key="__creationDateKey" value="Sun May 17 21:11:52 EDT 2015" />
                         </metadata>
@@ -299,7 +298,6 @@
                         </values>
                 </dataModule>
                 <dataModule id="MPRAGE_1" name="MPRAGE" posX="314" posY="30" sourceCode="" type="File" source="true" loopIndex="false" serverAddress="localhost">
-                        <tag />
                         <metadata>
                                 <data key="__creationDateKey" value="Sun May 17 21:12:15 EDT 2015" />
                         </metadata>
@@ -326,7 +324,6 @@
                         </values>
                 </dataModule>
                 <dataModule id="SubjectID_1" name="Subject ID" posX="495" posY="31" sourceCode="" type="String" source="true" loopIndex="false">
-                        <tag />
                         <metadata>
                                 <data key="__creationDateKey" value="Sun May 17 22:49:52 EDT 2015" />
                         </metadata>
