@@ -6,8 +6,10 @@
                 <connection source="SubjectID_1.Output" sink="CPAC_Pipe_1.subjectname" />
                 <connection source="Sub_List_Extract_1.subjectlistinCPACformat" sink="CPAC_CLI_1.CPACSubjectList" />
                 <connection source="Config_Gen_1.CPACconfig" sink="CPAC_CLI_1.CPACConfigFile" />
+                <connection source="CPAC_CLI_1.Newparameter1" sink="CleanReports_1.WaitforCPACtocomplete" />
+                <connection source="Config_Gen_1.OutputDirectory" sink="CleanReports_1.DirectorytoCleanLogFrom" />
                 <connection source="CPACCLI_1.OutputDirectory" sink="CorrAnalysis_1.BaseDirectoryoftheCPACruns" />
-                <connection source="CPACCLI_1.Newparameter1" sink="CorrAnalysis_1.waitforCPACtofinish" />
+                <connection source="CPACCLI_1.PreventTSE" sink="CorrAnalysis_1.waitforCPACtofinish" />
                 <connection source="TSEExtraction_1.TSElocations" sink="Path_Gen_Corr_1.textfileofnpzpaths" />
                 <connection source="Path_Gen_Corr_1.textfileofcorrpaths" sink="Viz_Corr_1.PathtoCorrMatrices" />
                 <connection source="Viz_Folder_Gen_1.Vizlocations" sink="Viz_Corr_1.PathtoVizLocations" />
@@ -34,7 +36,6 @@
                                         <data key="__creationDateKey" value="Sat Apr 25 18:19:16 EDT 2015" />
                                 </metadata>
                                 <input description="a directory containing subjects in the following format:&#xA;/subjname/scans.nii (or .nii.gz)" link="Sub_List_Extract_1.fMRI" id="CPACCLI_1.subjectlistdirectory" name="subject list directory" order="1" />
-                                <output link="CPAC_CLI_1.Newparameter1" id="CPACCLI_1.Newparameter1" name="New parameter 1" order="3" />
                                 <input link="Sub_List_Extract_1.template_sublist" id="CPACCLI_1.template" name="template" order="5" />
                                 <input link="Sub_List_Extract_1.MPRAGE" id="CPACCLI_1.MPRAGE" name="MPRAGE" order="6" />
                                 <input link="Sub_List_Extract_1.subjectname" id="CPACCLI_1.subjectname" name="subject name" order="7" />
@@ -42,6 +43,7 @@
                                 <input link="Config_Gen_1.WorkingDirectoryPath" id="CPACCLI_1.WorkingDirectoryPath" name="Working Directory Path" order="6" />
                                 <input link="Config_Gen_1.template_config" id="CPACCLI_1.template_config" name="template_config" order="7" />
                                 <input link="Config_Gen_1.CPACOutputDirectory" id="CPACCLI_1.CPACOutputDirectory" name="CPAC Output Directory" order="8" />
+                                <output link="CleanReports_1.PreventTSE" id="CPACCLI_1.PreventTSE" name="Prevent TSE" order="8" />
                                 <module id="Sub_List_Extract_1" name="Sub_List_Extract" package="OCP" version="0.1.0" icon="0" posX="0" posY="21" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/CPAC_sub_lists/cpac_sublist_gen2paths.py">
                                         <metadata>
                                                 <data key="__creationDateKey" value="Sat Apr 25 18:00:50 EDT 2015" />
@@ -84,6 +86,7 @@
                                         </input>
                                 </module>
                                 <module id="CPAC_CLI_1" name="CPAC_CLI" package="CPAC" version="0.3.8" posX="219" posY="220" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/functional_pipe/loni_wrappers/CPAC_wrappers/CPAC_cli.py">
+                                        <tag />
                                         <metadata>
                                                 <data key="__creationDateKey" value="Sat Apr 25 18:06:15 EDT 2015" />
                                         </metadata>
@@ -154,6 +157,21 @@
                                                 <values>
                                                         <value>/mnt/ssd1/data/outputs/CPAC/CPACtest3</value>
                                                 </values>
+                                        </input>
+                                </module>
+                                <module id="CleanReports_1" name="Clean Reports" package="OCP" version="0.1.0" posX="375" posY="376" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/functional_pipe/loni_wrappers/OCP_wrappers/clean_reports.sh">
+                                        <tag />
+                                        <metadata>
+                                                <data key="__creationDateKey" value="Fri May 22 04:02:27 EDT 2015" />
+                                        </metadata>
+                                        <input id="CleanReports_1.WaitforCPACtocomplete" name="Wait for CPAC to complete" required="true" enabled="true" order="0">
+                                                <format type="Flow Control" cardinality="1" />
+                                        </input>
+                                        <output id="CleanReports_1.PreventTSE" name="Prevent TSE" required="true" enabled="true" order="2">
+                                                <format type="Flow Control" cardinality="1" />
+                                        </output>
+                                        <input id="CleanReports_1.DirectorytoCleanLogFrom" name="Directory to Clean Log From" required="true" enabled="true" order="1">
+                                                <format type="String" cardinality="1" />
                                         </input>
                                 </module>
                         </moduleGroup>
