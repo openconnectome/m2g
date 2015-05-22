@@ -272,6 +272,7 @@
                         </moduleGroup>
                 </moduleGroup>
                 <dataModule id="fMRI_1" name="fMRI" package="OCP" posX="111" posY="29" sourceCode="" type="File" source="true" loopIndex="false" serverAddress="localhost">
+                        <tag />
                         <metadata>
                                 <data key="__creationDateKey" value="Sun May 17 21:11:52 EDT 2015" />
                         </metadata>
@@ -295,44 +296,10 @@
                                 <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-05/KKI2009-05-fMRI.nii</value>
                                 <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-06/KKI2009-06-fMRI.nii</value>
                                 <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-07/KKI2009-07-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-08/KKI2009-08-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-09/KKI2009-09-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-10/KKI2009-10-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-11/KKI2009-11-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-12/KKI2009-12-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-13/KKI2009-13-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-14/KKI2009-14-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-15/KKI2009-15-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-16/KKI2009-16-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-17/KKI2009-17-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-18/KKI2009-18-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-19/KKI2009-19-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-20/KKI2009-20-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-21/KKI2009-21-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-22/KKI2009-22-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-23/KKI2009-23-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-24/KKI2009-24-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-25/KKI2009-25-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-26/KKI2009-26-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-27/KKI2009-27-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-28/KKI2009-28-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-29/KKI2009-29-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-30/KKI2009-30-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-31/KKI2009-31-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-32/KKI2009-32-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-33/KKI2009-33-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-34/KKI2009-34-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-35/KKI2009-35-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-36/KKI2009-36-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-37/KKI2009-37-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-38/KKI2009-38-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-39/KKI2009-39-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-40/KKI2009-40-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-41/KKI2009-41-fMRI.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-42/KKI2009-42-fMRI.nii</value>
                         </values>
                 </dataModule>
                 <dataModule id="MPRAGE_1" name="MPRAGE" posX="314" posY="30" sourceCode="" type="File" source="true" loopIndex="false" serverAddress="localhost">
+                        <tag />
                         <metadata>
                                 <data key="__creationDateKey" value="Sun May 17 21:12:15 EDT 2015" />
                         </metadata>
@@ -356,44 +323,10 @@
                                 <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-05/KKI2009-05-MPRAGE.nii</value>
                                 <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-06/KKI2009-06-MPRAGE.nii</value>
                                 <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-07/KKI2009-07-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-08/KKI2009-08-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-09/KKI2009-09-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-10/KKI2009-10-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-11/KKI2009-11-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-12/KKI2009-12-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-13/KKI2009-13-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-14/KKI2009-14-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-15/KKI2009-15-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-16/KKI2009-16-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-17/KKI2009-17-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-18/KKI2009-18-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-19/KKI2009-19-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-20/KKI2009-20-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-21/KKI2009-21-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-22/KKI2009-22-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-23/KKI2009-23-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-24/KKI2009-24-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-25/KKI2009-25-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-26/KKI2009-26-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-27/KKI2009-27-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-28/KKI2009-28-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-29/KKI2009-29-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-30/KKI2009-30-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-31/KKI2009-31-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-32/KKI2009-32-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-33/KKI2009-33-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-34/KKI2009-34-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-35/KKI2009-35-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-36/KKI2009-36-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-37/KKI2009-37-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-38/KKI2009-38-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-39/KKI2009-39-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-40/KKI2009-40-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-41/KKI2009-41-MPRAGE.nii</value>
-                                <value>pipeline://localhost//mnt/ssd1/data/inputs/KKI2009/KKI2009-42/KKI2009-42-MPRAGE.nii</value>
                         </values>
                 </dataModule>
-                <dataModule id="SubjectID_1" name="Subject ID" posX="494" posY="31" sourceCode="" type="String" source="true" loopIndex="false">
+                <dataModule id="SubjectID_1" name="Subject ID" posX="495" posY="31" sourceCode="" type="String" source="true" loopIndex="false">
+                        <tag />
                         <metadata>
                                 <data key="__creationDateKey" value="Sun May 17 22:49:52 EDT 2015" />
                         </metadata>
@@ -408,41 +341,6 @@
                                 <value>9131</value>
                                 <value>1422</value>
                                 <value>1271</value>
-                                <value>7422</value>
-                                <value>4221</value>
-                                <value>8152</value>
-                                <value>9061</value>
-                                <value>2392</value>
-                                <value>9161</value>
-                                <value>9592</value>
-                                <value>8141</value>
-                                <value>5052</value>
-                                <value>9591</value>
-                                <value>4922</value>
-                                <value>2391</value>
-                                <value>1422</value>
-                                <value>8151</value>
-                                <value>6792</value>
-                                <value>8001</value>
-                                <value>9162</value>
-                                <value>8491</value>
-                                <value>8142</value>
-                                <value>8001</value>
-                                <value>6562</value>
-                                <value>7421</value>
-                                <value>1132</value>
-                                <value>9131</value>
-                                <value>5022</value>
-                                <value>1131</value>
-                                <value>1272</value>
-                                <value>5051</value>
-                                <value>5022</value>
-                                <value>9341</value>
-                                <value>4922</value>
-                                <value>3461</value>
-                                <value>6562</value>
-                                <value>3461</value>
-                                <value>4222</value>
                         </values>
                 </dataModule>
         </moduleGroup>
