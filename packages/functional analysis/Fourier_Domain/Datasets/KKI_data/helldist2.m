@@ -30,24 +30,25 @@ for c = 1:38
     end
 end
 numiter = 1;
-thresh = logspace(-4, 0, 25);
-for tval = 1:length(thresh)
+tvals = logspace(-4, 0, 25);
+for tloc = 1:length(tvals)
     %threshold the scans
-    pwr(pwr<thresh(tval)) = 0; 
-    %renormalize
+    pwr2 = pwr;
+    pwr2(pwr<tvals(tloc)) = 0; 
+    %renormalize...
     for i = 1:38
         for j = 1:70
-            pwr(j,:,i) = pwr(j,:,i)/sum(pwr(j,:,i));
+            pwr2(j,:,i) = pwr2(j,:,i)/sum(pwr2(j,:,i));
         end
     end
+    
     %use the thresholded power for the scans
     for j = 1:70
         for a = 1:38
             for b = 1:38
                 %j is the roi number, i is the scan, z is the scan being compared
                 %to
-                H(j,a,b) = norm(pwr(j,:,a) - pwr(j,:,b))/sqrt(2);
-
+                H(j,a,b) = norm(pwr2(j,:,a) - pwr2(j,:,b))/sqrt(2);
             end
         end
     end
@@ -89,54 +90,57 @@ for tval = 1:length(thresh)
     intra = intra/42;
     inter = inter/42;
     title(strcat('correct matches=', num2str(matches),'/', num2str(size(smg,3))));
-    TRT(numiter) = matches/size(smg,3);
+    TRTcorr(numiter) = matches/size(smg,3);
     numiter = numiter + 1;
+    fprintf('value')
 
     % compute the pairwise correlation for sake of comparison
-    for i = 1:38
-        pair(i,:,:) = corr(smg(:,:,i)');
-    end
-
-    for i = 1:38
-        for j = 1:38
-            gErr(i,j) = sum(sum((pair(i,:,:) - pair(j,:,:)).^2));
-        end
-    end
+%     for i = 1:38
+%         pair(i,:,:) = corr(smg(:,:,i)');
+%     end
+%     pair(pair<threshval) = 0;
+%     for i = 1:38
+%         for j = 1:38
+%             gErr(i,j) = sum(sum((pair(i,:,:) - pair(j,:,:)).^2));
+%         end
+%     end
 
     %% Compute TRT
-    figure(2), imagesc(log(gErr)), colorbar
-    set(gca, 'yscale','log')
-    matches = 0;
-    intra = 0; inter = 0;
-    intravec = [];
-    intervec = [];
-    for i = 1:1:size(gErr,1)
-        temp = sort(gErr(i,:));
-        q = i-1+2*mod(i,2);
-        matches = matches + (temp(2)==gErr(i,q));
-        intra = intra + gErr(i,q);
-        temp2 = sum([gErr(i,1:q-1), gErr(i,q+1:end)])/40; %40 bc 1 is intra, 1 is me
-        inter = inter + temp2;
-        intravec = [intravec, gErr(i,q)];
-        if i < q
-            if i > 1
-                intervec = [intervec, gErr(i,q-2), gErr(i,q+1:end)];
-            else
-                intervec = [intervec, gErr(i,q+1:end)];
-            end
-        else
-            if i > 2
-                intervec = [intervec, gErr(i,q-1), gErr(i,q+2:end)];
-            else
-                intervec = [intervec, gErr(i,q+2:end)];
-            end
-        end
-    end
-    intra = intra/42;
-    inter = inter/42;
-    title(strcat('correct matches=', num2str(matches),'/', num2str(size(smg,3))));
-
+%     figure(2), imagesc(log(gErr)), colorbar
+%     set(gca, 'yscale','log')
+%     matches = 0;
+%     intra = 0; inter = 0;
+%     intravec = [];
+%     intervec = [];
+%     for i = 1:1:size(gErr,1)
+%         temp = sort(gErr(i,:));
+%         q = i-1+2*mod(i,2);
+%         matches = matches + (temp(2)==gErr(i,q));
+%         intra = intra + gErr(i,q);
+%         temp2 = sum([gErr(i,1:q-1), gErr(i,q+1:end)])/40; %40 bc 1 is intra, 1 is me
+%         inter = inter + temp2;
+%         intravec = [intravec, gErr(i,q)];
+%         if i < q
+%             if i > 1
+%                 intervec = [intervec, gErr(i,q-2), gErr(i,q+1:end)];
+%             else
+%                 intervec = [intervec, gErr(i,q+1:end)];
+%             end
+%         else
+%             if i > 2
+%                 intervec = [intervec, gErr(i,q-1), gErr(i,q+2:end)];
+%             else
+%                 intervec = [intervec, gErr(i,q+2:end)];
+%             end
+%         end
+%     end
+%     intra = intra/42;
+%     inter = inter/42;
+%     title(strcat('correct matches=', num2str(matches),'/', num2str(size(smg,3))));
+%     TRTcorr(numiter) = matches/size(smg,3);
+%     numiter = numiter+1;
 
 end
 
-plot(thresh, TRT);
+thresh = logspace(-4, 0, 25);
+plot(thresh, TRTcorr)
