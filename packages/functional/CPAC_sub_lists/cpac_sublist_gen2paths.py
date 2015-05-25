@@ -16,8 +16,8 @@
 #
 
 # cpac_list_gen.py
-# Created by Greg Kiar on 2015-03-29.
-# Email: gkiar@jhu.edu
+# Created by Eric Bridgeford on 2015-05-14.
+# Email: ebridge2@jhu.edu
 # Copyright (c) 2015. All rights reserved.
 
 from argparse import ArgumentParser
@@ -27,28 +27,26 @@ from re import compile, sub
 from random import random
 from numpy import floor
 
-def make_list(datadir, template, outlist):
+def make_list(subname, fmri, mprage, template, outlist):
   
   inf = open(template, 'r')
   content = inf.readlines()
   inf.close()
+  out_data = list()
 
   p = compile('num|path')
-  dirs = [f for f in listdir(datadir) if isdir(join(datadir,f))]
-  out_data = list()
-  for i in range(0, len(dirs)):
-    temp_sub =  content[:]
+  temp_sub =  content[:]
     
-    subj_id = i+1
-    unique_id = floor(random()*pow(2,32))
-    mprage_path = join(datadir, dirs[i]+'/'+dirs[i]+'-MPRAGE.nii')
-    fmri_path = join(datadir, dirs[i]+'/'+dirs[i]+'-fMRI.nii')
+  subj_id = subname
+  unique_id = floor(random()*pow(2,32))
+  mprage_path = mprage
+  fmri_path = fmri
 
-    temp_sub[1] = p.sub("'"+str(subj_id)+"'", temp_sub[1])
-    temp_sub[2] = p.sub("'"+str(int(unique_id))+"'", temp_sub[2])
-    temp_sub[3] = p.sub("'"+mprage_path+"'", temp_sub[3])
-    temp_sub[4] = p.sub("'"+fmri_path+"'", temp_sub[4])
-    out_data.append(temp_sub)
+  temp_sub[1] = p.sub("'"+subj_id+"'", temp_sub[1])
+  temp_sub[2] = p.sub("'"+str(int(unique_id))+"'", temp_sub[2])
+  temp_sub[3] = p.sub("'"+mprage_path+"'", temp_sub[3])
+  temp_sub[5] = p.sub("'"+fmri_path+"'", temp_sub[5])
+  out_data.append(temp_sub)
   
   ouf = open(outlist, 'w')
   for subj in out_data:
@@ -58,15 +56,17 @@ def make_list(datadir, template, outlist):
 
 def main():
   parser = ArgumentParser(description="")
-  parser.add_argument("data_dir", action="store", help="base data directory (contains directories for all subjects")
-  parser.add_argument("outlist", action="store", help="output list file")
-  parser.add_argument("-t","--template", nargs="+", help="template for cpac format")
+  parser.add_argument("subID", type=str, help="the name corresponding to the subject")
+  parser.add_argument("fMRI", type=str, help="the fMRI corresponding to the subject")
+  parser.add_argument("mprage",type=str, help="the mprage structural file for the subject.")
+  parser.add_argument("outfile", help="the subject list in CPAC format")
+  parser.add_argument("template",type=str,  help="the mprage corresponding to the subject")
 
   result = parser.parse_args()
   if result.template:
-    make_list(result.data_dir, result.template, result.outlist)
+    make_list(result.subID, result.fMRI, result.mprage, result.template, result.outfile)
   else:
-    make_list(result.data_dir, 'template_for_cpac.yml', result.outlist)
+    make_list(result.data_dir, 'template_for_cpac.yml', result.outfile)
 
 if __name__=='__main__':
   main()

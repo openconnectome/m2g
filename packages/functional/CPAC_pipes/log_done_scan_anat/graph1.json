@@ -1,0 +1,21 @@
+{
+    "groups": [
+        {
+            "name": "Group_00001", 
+            "procs": [
+                0
+            ], 
+            "total": 1
+        }
+    ], 
+    "links": [], 
+    "maxN": 1, 
+    "nodes": [
+        {
+            "group": 1, 
+            "name": "0_write_log", 
+            "report": "/home/eric/tmp/tmpY0FHKr/log_done_scan_anat/write_log/_report/report.rst", 
+            "result": "/home/eric/tmp/tmpY0FHKr/log_done_scan_anat/write_log/result_write_log.pklz"
+        }
+    ]
+}

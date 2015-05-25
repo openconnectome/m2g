@@ -2,7 +2,8 @@
     subject_id: num
     unique_id: num
     anat: path
-    rest: path
+    rest: 
+        rest_1_rest: path
     scan_parameters:
         tr: '2.5'
         acquisition: 'seq+z'

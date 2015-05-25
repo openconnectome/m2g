@@ -1,0 +1,6 @@
+/home/eric/Documents/CPAC_outputs/CPACvizout//roi_viz0.png
+/home/eric/Documents/CPAC_outputs/CPACvizout//roi_viz1.png
+/home/eric/Documents/CPAC_outputs/CPACvizout//roi_viz2.png
+/home/eric/Documents/CPAC_outputs/CPACvizout//roi_viz3.png
+/home/eric/Documents/CPAC_outputs/CPACvizout//roi_viz4.png
+/home/eric/Documents/CPAC_outputs/CPACvizout//roi_viz5.png

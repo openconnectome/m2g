@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="Path_Gen_Corr_1.textfileofcorrpaths" sink="Viz_Corr_1.PathtoCorrMatrices" />
+                <connection source="Viz_Folder_Gen_1.Vizlocations" sink="Viz_Corr_1.PathtoVizLocations" />
+                <connection source="Corr_Gen_1.Newparameter1" sink="Viz_Corr_1.Newparameter1" />
+                <connection source="TSEExtraction_1.TSElocations" sink="Path_Gen_Corr_1.textfileofnpzpaths" />
+                <connection source="TSEExtraction_1.TSElocations" sink="Corr_Gen_1.pathstothenpztimeseriesfiles" />
+                <connection source="Path_Gen_Corr_1.textfileofcorrpaths" sink="Corr_Gen_1.pathtothenpytimeseriesfiles" />
+                <connection source="Path_Gen_Corr_1.textfileofcorrpaths" sink="Viz_Folder_Gen_1.LocationsofCorrfiles" />
+        </connections>
+        <moduleGroup id="Untitled_1" name="Untitled" posX="0" posY="0" sourceCode="">
+                <input link="TSEExtraction_1.BaseDirectoryoftheCPACruns" id="Untitled_1.BaseDirectoryoftheCPACruns" name="Base Directory of the CPAC runs" order="0" />
+                <module id="TSEExtraction_1" name="TSE Extraction" package="OCP" version="0.1.0" posX="64" posY="88" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/functional_pipe/loni_wrappers/OCP_wrappers/tse_path_extract.sh">
+                        <metadata>
+                                <data key="__creationDateKey" value="Sat Apr 25 18:21:01 EDT 2015" />
+                        </metadata>
+                        <input id="TSEExtraction_1.BaseDirectoryoftheCPACruns" name="Base Directory of the CPAC runs" required="true" enabled="true" order="0">
+                                <format type="Directory" cardinality="1" />
+                                <values>
+                                        <value>pipeline://localhost//mnt/ssd1/data/outputs/CPAC/CPAC_test1/outputs/pipeline_preproc_only/new_dirs/</value>
+                                </values>
+                        </input>
+                        <input id="TSEExtraction_1.stringtomatch" name="string to match" description="the type of timeseries analysis that will take place; should be &quot;roi_timeseries&quot; unless otherwise desired" required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1" />
+                                <values>
+                                        <value>roi_timeseries</value>
+                                </values>
+                        </input>
+                        <output id="TSEExtraction_1.TSElocations" name="TSE locations" required="true" enabled="true" order="2">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="text" extension="txt" description="" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                </module>
+                <module id="Viz_Corr_1" name="Viz_Corr" package="OCP" version="0.1.0" posX="614" posY="603" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/functional_pipe/loni_wrappers/OCP_wrappers/vizcorr.py">
+                        <metadata>
+                                <data key="__creationDateKey" value="Sat Apr 25 19:19:12 EDT 2015" />
+                        </metadata>
+                        <input id="Viz_Corr_1.PathtoCorrMatrices" name="Path to Corr Matrices" description="Text file with the paths to the corr matrices" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="text" extension="txt" description="" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="Viz_Corr_1.PathtoVizLocations" name="Path to Viz Locations" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="text" extension="txt" description="" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="Viz_Corr_1.Newparameter1" name="New parameter 1" required="true" enabled="true" order="2">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                </module>
+                <module id="Path_Gen_Corr_1" name="Path_Gen_Corr" package="OCP" version="0.1.0" posX="481" posY="233" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/functional_pipe/loni_wrappers/OCP_wrappers/path_gen_corr_files.sh">
+                        <metadata>
+                                <data key="__creationDateKey" value="Sat Apr 25 19:16:12 EDT 2015" />
+                        </metadata>
+                        <input id="Path_Gen_Corr_1.textfileofnpzpaths" name="text file of npz paths" description="text file containing the paths to the npz files, each on a separate line" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="text" extension="txt" description="" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="Path_Gen_Corr_1.textfileofcorrpaths" name="text file of corr paths" description="text file containing paths to the correlations matrices that will be generated" required="false" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="text" extension="txt" description="" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                </module>
+                <module id="Corr_Gen_1" name="Corr_Gen" package="OCP" version="0.1.0" posX="113" posY="400" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/functional_pipe/loni_wrappers/OCP_wrappers/driver_roitse2corr.py">
+                        <metadata>
+                                <data key="__creationDateKey" value="Sat Apr 25 19:04:21 EDT 2015" />
+                        </metadata>
+                        <input id="Corr_Gen_1.pathstothenpztimeseriesfiles" name="paths to the npz timeseries files" description="text file containing all the paths to the numpy archives with the tse information; each path is on a newline" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="text" extension="txt" description="" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="Corr_Gen_1.Newparameter1" name="New parameter 1" required="false" enabled="true" order="2">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                        <input id="Corr_Gen_1.pathtothenpytimeseriesfiles" name="path to the npy timeseries files" description="paths to the npy arrays of the corr matrices; each line contains one path to an output to be generated; should be of equal length to above by definition..." required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                </module>
+                <module id="Viz_Folder_Gen_1" name="Viz_Folder_Gen" package="OCP" version="0.1.0" posX="709" posY="396" sourceCode="" location="pipeline://localhost//home/eric/Documents/m2g/packages/functional/functional_pipe/loni_wrappers/OCP_wrappers/png_path_gen.sh">
+                        <metadata>
+                                <data key="__creationDateKey" value="Sat Apr 25 19:35:54 EDT 2015" />
+                        </metadata>
+                        <output id="Viz_Folder_Gen_1.Vizlocations" name="Viz locations" description="text file where each line represents a location of a png file" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="text" extension="txt" description="" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="Viz_Folder_Gen_1.LocationsofCorrfiles" name="Locations of Corr files" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                </module>
+        </moduleGroup>
+</pipeline>
+

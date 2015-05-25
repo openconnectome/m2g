@@ -1,0 +1,504 @@
+-
+    subject_id: '1'
+    unique_id: '1778689511'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-06/KKI2009-06-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-06/KKI2009-06-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '2'
+    unique_id: '1878012231'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-07/KKI2009-07-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-07/KKI2009-07-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '3'
+    unique_id: '2083100390'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-12/KKI2009-12-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-12/KKI2009-12-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '4'
+    unique_id: '4226034341'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-04/KKI2009-04-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-04/KKI2009-04-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '5'
+    unique_id: '1751525030'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-09/KKI2009-09-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-09/KKI2009-09-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '6'
+    unique_id: '1241099874'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-18/KKI2009-18-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-18/KKI2009-18-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '7'
+    unique_id: '2513691013'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-13/KKI2009-13-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-13/KKI2009-13-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '8'
+    unique_id: '446561464'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-22/KKI2009-22-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-22/KKI2009-22-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '9'
+    unique_id: '2694662916'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-33/KKI2009-33-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-33/KKI2009-33-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '10'
+    unique_id: '2876654632'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-16/KKI2009-16-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-16/KKI2009-16-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '11'
+    unique_id: '987690887'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-19/KKI2009-19-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-19/KKI2009-19-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '12'
+    unique_id: '2005504391'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-17/KKI2009-17-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-17/KKI2009-17-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '13'
+    unique_id: '1563555606'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-40/KKI2009-40-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-40/KKI2009-40-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '14'
+    unique_id: '918487825'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-37/KKI2009-37-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-37/KKI2009-37-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '15'
+    unique_id: '780398650'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-42/KKI2009-42-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-42/KKI2009-42-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '16'
+    unique_id: '3777624884'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-34/KKI2009-34-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-34/KKI2009-34-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '17'
+    unique_id: '1362087547'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-21/KKI2009-21-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-21/KKI2009-21-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '18'
+    unique_id: '3048839965'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-25/KKI2009-25-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-25/KKI2009-25-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '19'
+    unique_id: '3162720510'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-36/KKI2009-36-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-36/KKI2009-36-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '20'
+    unique_id: '1310160112'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-24/KKI2009-24-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-24/KKI2009-24-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '21'
+    unique_id: '4106510871'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-26/KKI2009-26-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-26/KKI2009-26-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '22'
+    unique_id: '2743118132'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-30/KKI2009-30-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-30/KKI2009-30-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '23'
+    unique_id: '2333745080'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-35/KKI2009-35-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-35/KKI2009-35-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '24'
+    unique_id: '2882073074'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-01/KKI2009-01-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-01/KKI2009-01-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '25'
+    unique_id: '1563145240'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-15/KKI2009-15-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-15/KKI2009-15-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '26'
+    unique_id: '3861165742'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-08/KKI2009-08-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-08/KKI2009-08-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '27'
+    unique_id: '139099811'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-11/KKI2009-11-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-11/KKI2009-11-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '28'
+    unique_id: '329863443'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-27/KKI2009-27-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-27/KKI2009-27-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '29'
+    unique_id: '387804505'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-31/KKI2009-31-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-31/KKI2009-31-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '30'
+    unique_id: '2732399225'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-39/KKI2009-39-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-39/KKI2009-39-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '31'
+    unique_id: '355396076'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-20/KKI2009-20-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-20/KKI2009-20-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '32'
+    unique_id: '2285077537'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-02/KKI2009-02-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-02/KKI2009-02-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '33'
+    unique_id: '1867632942'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-23/KKI2009-23-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-23/KKI2009-23-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '34'
+    unique_id: '3326263119'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-14/KKI2009-14-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-14/KKI2009-14-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '35'
+    unique_id: '3421457441'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-41/KKI2009-41-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-41/KKI2009-41-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '36'
+    unique_id: '2738816820'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-10/KKI2009-10-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-10/KKI2009-10-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '37'
+    unique_id: '1944729955'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-03/KKI2009-03-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-03/KKI2009-03-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '38'
+    unique_id: '1471043117'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-32/KKI2009-32-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-32/KKI2009-32-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '39'
+    unique_id: '489755662'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-05/KKI2009-05-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-05/KKI2009-05-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '40'
+    unique_id: '2998326429'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-29/KKI2009-29-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-29/KKI2009-29-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '41'
+    unique_id: '3248060869'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-38/KKI2009-38-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-38/KKI2009-38-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''
+-
+    subject_id: '42'
+    unique_id: '2924850236'
+    anat: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-28/KKI2009-28-MPRAGE.nii'
+    rest: 
+        rest_1_rest: '/mnt/ssd1/data/inputs/KKI2009/KKI2009-28/KKI2009-28-fMRI.nii'
+    scan_parameters:
+        tr: '2.5'
+        acquisition: 'seq+z'
+        reference: '24'
+        first_tr: ''
+        last_tr: ''

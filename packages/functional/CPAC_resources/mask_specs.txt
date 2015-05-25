@@ -1,0 +1,5 @@
+/home/eric/Documents/resources/masks/aMPFC.nii.gz
+/home/eric/Documents/resources/masks/dMPFC.nii.gz
+/home/eric/Documents/resources/masks/LTC.nii.gz
+/home/eric/Documents/resources/masks/PCC.nii.gz
+/home/eric/Documents/resources/masks/TPJ.nii.gz
